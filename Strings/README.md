@@ -15,5 +15,3 @@ Creation Syntax:
 ### String Constant Pool
 
 JVM allocates an area of memory called String Constant Pool where String literal objects are stored. When the compiler encounters a String literal, it checks in the String Constant Pool to see if an identical String exists. If it does, the reference to it is returned, else a new String literal object is created in the String Constant Pool and its reference is returned.
-
-
