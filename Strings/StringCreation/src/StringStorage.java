@@ -23,7 +23,7 @@ public class StringStorage {
             Since an object with the literal "Hello World!" already exists on the String Constant Pool area, its
             reference is returned, instead of creating a new object in the String Constant Pool area
 
-            Therefore, the following line creates only one object
+            Therefore, the following line creates only one object in the non-pool area
          */
         String s3 = new String("Hello World!");
     }
