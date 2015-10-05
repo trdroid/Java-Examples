@@ -46,7 +46,7 @@ class StringCreation {
             String str = "Today!";
 
             The concat method creates a new String Object that contains the content "Welcome Today!", but the
-            reference to it is not assigned to any variable and is lost. 
+            reference to it is not assigned to any variable and is lost.
          */
         s3.concat("Today!");
 
