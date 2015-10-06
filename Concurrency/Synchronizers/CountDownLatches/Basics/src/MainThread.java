@@ -2,6 +2,8 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * Threads synchronize on a CountDownLatch
+ * The MainThread passes its CountDownLatch instance to other threads so that they can call await on this instance
+ * to synchronize.
  *
  * Two independent threads wait for the main thread to finish performing its operations before executing
  *
