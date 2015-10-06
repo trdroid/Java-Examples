@@ -15,7 +15,7 @@ public class MainThread {
     public static void main(String[] args) {
 
         CountDownLatch countDownLatch = new CountDownLatch(TOTAL_NUMBER_OF_OPERATIONS);
-
+        
         new Thread(new JobA(countDownLatch)).start();
         new Thread(new JobB(countDownLatch)).start();
 
@@ -24,6 +24,8 @@ public class MainThread {
         while(operationsLeft > 0) {
             System.out.println("Operations Left:" + operationsLeft);
             performOperation();
+
+            //Reduce the count once an operation completes
             countDownLatch.countDown();
             operationsLeft = countDownLatch.getCount();
         }
@@ -46,6 +48,8 @@ class JobA implements Runnable {
     public void run() {
         try {
             System.out.println("JobA waiting ...");
+
+            //wait until the count associated with the countDownLatch becomes zero
             countDownLatch.await();
             System.out.println("JobA Started");
             Thread.sleep(5000);
@@ -64,6 +68,8 @@ class JobB implements Runnable {
     public void run() {
         try {
             System.out.println("JobB waiting ...");
+
+            //wait until the count associated with the countDownLatch becomes zero
             countDownLatch.await();
             System.out.println("JobB Started");
             Thread.sleep(5000);
