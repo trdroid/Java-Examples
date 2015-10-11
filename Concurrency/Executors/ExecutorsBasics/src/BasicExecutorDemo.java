@@ -4,7 +4,13 @@ public class BasicExecutorDemo {
     public static void main(String[] args) {
         CustomExecutor customExecutor = new CustomExecutor(4);
 
-        customExecutor.execute(new Job());
+        /*
+            Job Creation ONLY.
+            Job execution is NOT handled here.
+         */
+        Job job = new Job("TaskA");
+
+        customExecutor.execute(job);
     }
 }
 
@@ -16,8 +22,10 @@ class CustomExecutor implements Executor {
     }
 
     /*
-        Abstracts how the thread is created and/or executed
+        Job execution is handled here
         The creation of a job and its execution are decoupled
+
+        In general, the execute() method abstracts how threads are created and/or executed
     */
     public void execute(Runnable runnable) {
         for(int iter = 0; iter < times; iter++) {
@@ -27,7 +35,13 @@ class CustomExecutor implements Executor {
 }
 
 class Job implements Runnable {
+    private String name;
+
+    public Job(String name) {
+        this.name = name;
+    }
+
     public void run() {
-        System.out.println("Performing a job in " + Thread.currentThread().getName());
+        System.out.println("Performing job " + name + " in " + Thread.currentThread().getName());
     }
 }
