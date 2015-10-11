@@ -15,7 +15,7 @@ public class MainThread {
     public static void main(String[] args) {
 
         CountDownLatch countDownLatch = new CountDownLatch(TOTAL_NUMBER_OF_OPERATIONS);
-        
+
         new Thread(new JobA(countDownLatch)).start();
         new Thread(new JobB(countDownLatch)).start();
 
