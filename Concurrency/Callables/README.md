@@ -28,7 +28,8 @@ The task returns a value after it completes. If the task fails to execute, it th
     Callable<Type> taskClassInstance = new TaskClass();    
 ```
 * Create a thread pool, so that the task can run on a thread from the thread pool
-* Submit the taskClassInstance to the thread pool, which returns a Future instance from which the result can be fetched
+* Submit the taskClassInstance to the thread pool, which returns a Future instance
+* Use the get() method on the Future instance to get the result
 
 The Thread Pool uses a thread from its pool to run the task of the taskClassInstance by calling 
 taskClassInstance.call() where the task is defined. 
