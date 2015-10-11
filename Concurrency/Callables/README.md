@@ -10,5 +10,5 @@ V call() throws Exception
 
 The implementation of the call() method represents a task.
 
-The task returns a value after it completes. If the task fails to execute, it will throw an exception.
+The task returns a value after it completes. If the task fails to execute, it throws an exception.
 
