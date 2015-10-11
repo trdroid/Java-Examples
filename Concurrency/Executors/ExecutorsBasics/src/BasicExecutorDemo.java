@@ -16,7 +16,7 @@ class CustomExecutor implements Executor {
     }
 
     /*
-        Abstracts how the thread is created/executed
+        Abstracts how the thread is created and/or executed
         The creation of a job and its execution are decoupled
     */
     public void execute(Runnable runnable) {
