@@ -48,6 +48,12 @@ A shared library could be loaded using
 
 The *loadLibrary()* method can be configured to search for a shared library in one of the following ways 
 
-* 
+* *The environment variable approach*: Including the directory containing the shared library in the *PATH* environment variable on Windows and the *LD_LIBRARY_PATH* environment variables on \*nix platforms.
 
-*
+* *The command line approach*: Specifying the directory or semicolon-seperated directories as the value for the *java.library.path* JVM property in the command line. 
+
+Assuming that the shared library used in the Java class "Main.java" is at /usr/droid/myjnilib
+
+```sh
+java -Djava.library.path=/usr/droid/myjnilib Main
+```
