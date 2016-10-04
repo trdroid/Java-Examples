@@ -25,3 +25,29 @@ A *shared library* is referred to as a *Dynamic Link Library (DLL)* on Windows a
  **Drawbacks**
  
  1) *Portability*:   
+
+
+### Loading a shared library in a Java program
+
+A shared library should be loaded before it can be called in a Java program. 
+
+A shared library could be loaded using
+
+*System.loadLibrary(String sharedLibrary)*
+
+
+
+*Runtime.getRuntime().loadLibrary(String sharedLibrary)*
+
+
+
+*System.load(String sharedLibrary)*
+
+
+### Semantics of finding a shared library
+
+The *loadLibrary()* method can be configured to search for a shared library in one of the following ways 
+
+* 
+
+*
