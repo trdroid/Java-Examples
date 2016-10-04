@@ -1,0 +1,27 @@
+# Java Native Interface
+
+### Native Methods
+
+A *native method* is a method in Java that is implemented in a native language like C/C++.
+
+**Compilation**
+
+A Java program is compiled into a *platform-independent* byte code. 
+*Native method*'s are compiled into a *shared library* which has a *platform-dependent* format and which are loaded by the JVM. 
+A *shared library* is referred to as a *Dynamic Link Library (DLL)* on Windows and a *Shared Object (SO)* on \*nix platforms.  
+
+**Calling a native method**
+
+ A *native method* is called the same way as a regular Java method.
+ 
+ **Benefits**
+ 
+ 1) *Leveraging legacy code*: Any existing legacy code written in native languages can be re-used in a Java application.
+ 
+ 2) *Performance benefits*: Any time-critical section of a Java application can be written in native code and integrated with it if the Java version of the time-critical section is deemed to be less performant.
+ 
+ 3) *Platform-specific features*: If Java does not provide APIs for a particular platform-specific feature, then it can be implemented in a native language and integrated with a Java application.
+ 
+ **Drawbacks**
+ 
+ 1) *Portability*:   
