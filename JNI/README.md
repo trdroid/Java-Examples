@@ -2,7 +2,25 @@
 
 ### Native Methods
 
-A *native method* is a method in Java that is implemented in a native language like C/C++.
+A *native method* is a method in Java that is implemented in a native language like C/C++. 
+
+**Declaration**
+
+A *native method* in Java is JUST declared but not defined . A *native method* is defined in a native language and exists in the native code that has to be loaded by a Java program into the JVM before it can be called.
+
+A *native method* can be declared as
+
+* a static method (or)
+* an instance method
+
+A *native method* can be declared with any of the following scopes
+
+* private
+* default
+* protected
+* public
+
+A *native method* CANNOT be declared as an *abstract* method.
 
 **Compilation**
 
@@ -52,8 +70,14 @@ The *loadLibrary()* method can be configured to search for a shared library in o
 
 * *The command line approach*: Specifying the directory or semicolon-seperated directories as the value for the *java.library.path* JVM property in the command line. 
 
-Assuming that the shared library used in the Java class "Main.java" is at /usr/droid/myjnilib
+```
+$ java -Djava.library.path=<directory or semicolon-seperated directories> <Class name>
+```
+
+Example:
+
+Assuming that the shared library used in the Java class "Main.class" (compiled from "Main.java") is at /home/droid/myjnilib
 
 ```sh
-java -Djava.library.path=/usr/droid/myjnilib Main
+$ java -Djava.library.path=/home/droid/myjnilib Main
 ```
