@@ -13,7 +13,7 @@ A *native method* can be declared as
 * a static method (or)
 * an instance method
 
-A *native method* can be declared with any of the following scopes
+A *native method* can be declared with any of the following access modifiers
 
 * private
 * default
