@@ -35,6 +35,6 @@ Stream<String> stream = Stream.empty();
 An *empty stream* of *int*s can be created as follows
 
 ```java
-IntStream ints = 
+IntStream ints = IntStream.empty();
 ```
 
